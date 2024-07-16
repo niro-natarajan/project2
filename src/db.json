@@ -1,0 +1,18 @@
+{
+  "seller": [
+    {
+      "id": 1,
+      "fullname": "Thara",
+      "emailid": "tara@gmail.com",
+      "phonenumber": 65789,
+      "password": "hkj"
+    },
+    {
+      "id": 2,
+      "fullname": "Haritha",
+      "emailid": "hgf",
+      "phonenumber": "654",
+      "password": "hgfd"
+    }
+  ]
+}

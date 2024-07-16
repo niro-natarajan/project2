@@ -1,0 +1,183 @@
+
+/* Styling for the cart table */
+.cart-table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin: 2% auto;
+   
+  }
+  
+  /* Styling for table headers */
+  .cart-table th {
+    text-align: center;
+    padding: 8px;
+    background-color: #e39d23;
+  }
+  
+  /* Styling for table data cells */
+  .cart-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  /* Styling for image in table */
+  .cart-table img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+  }
+  
+  /* Styling for total section */
+  .cart-total {
+    margin-top: 5px;
+    float: right;
+    margin-right: 28%;
+  }
+  
+  /* Styling for checkout button */
+  .cart-checkout{
+    // margin-top: 8%;
+    // margin-bottom: 2%;
+    align-items: center;
+    background-color: rgb(188, 50, 50);
+    display: block;
+  margin: 8% auto; /* This will center the button horizontally */
+  }
+
+  .cart-counter{
+  //   margin-top: 5px;
+    margin-bottom: 1%;
+    margin-left: 25%;
+  }
+
+  .cart-counter span{
+    background-color: rgb(228, 176, 108);    
+  }
+
+  .empty-cart-message {
+    position: relative;
+    margin-top: 12%;
+}
+
+.empty-cart-message img {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+}
+
+pre {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(95, 63, 63);
+    font-size: 22px;
+    font-family: cursive;
+    font-weight: bold;
+    text-align: center;
+    // background-color: rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    // border-radius: 9px;    /* Optional: Add rounded corners */
+}
+
+  
+//   /* Styling for empty cart message */
+//   .empty-cart-message {
+//     text-align: center;
+//     margin-top: 20px;
+//   }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   --------------------------------------------------------------------
+
+// h2 {
+//     // text-align: center;
+//     font-size: 2rem;
+//     color: rgb(187, 99, 37);
+//     text-decoration: underline;
+// }
+
+// .cart-container {
+//     // display: flex;
+//     // justify-content: space-between;
+//     margin: 20px;
+//     display: flex;
+//     justify-content: center; /* Center the cart-items horizontally */  
+// }
+
+// .cart-items {
+//     flex: 1;
+//     padding: 20px;
+//     border: 1px solid #ccc;
+//     border-radius: 5px;
+//     width: 40%; /* Adjust width as needed */
+//     align-items: center;
+//     margin: auto;
+// }
+
+// .cart-counter {
+//     flex: 1;
+//     padding: 20px;
+//     border: 1px solid #ccc;
+//     border-radius: 5px;
+// }
+
+
+
+
+
+
+// .item {
+//     display: flex;
+//     flex-direction: row;
+// }
+
+// .item-details {
+//     flex: 1;    /* Take up remaining space */
+// }
+
+// .cost {
+//     margin-right: 10px;    /* Adjust margin as needed */
+// }
+
+// .cart-total {
+//     flex: 0;    /* Do not grow or shrink */
+//     margin-left: auto;    /* Push to the right */
+// }
+
+
+
+// // .item {
+// //     display: flex;
+// // }
+
+// // .item-details {
+// //     flex: 1;
+// //     /* Take remaining space */
+// // }
+
+// // .cost {
+// //     margin-left: 20px;
+// //     /* Adjust margin as needed */
+// // }

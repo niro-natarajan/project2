@@ -1,0 +1,50 @@
+<mat-drawer-container class="hot-drawer-container">
+    <mat-drawer mode="side" opened>
+        <div class="coffee-nav-bar">
+            <h2 style="text-align: center">CATEGORIES</h2>
+
+            <div class="filter-group">
+                <h3>Coffee Types</h3>
+                <mat-checkbox *ngFor="let coffee of coffees" [(ngModel)]="coffee.checked" (change)="applyFilters()">
+                    {{ coffee.name }}
+                </mat-checkbox>
+            </div>
+
+            <div class="filter-group">
+                <h3>Price</h3>
+                <mat-checkbox *ngFor="let price of priceRanges" [(ngModel)]="price.checked" (change)="applyFilters()">{{
+                    price.name }}</mat-checkbox>
+            </div>
+        </div>
+        <!-- <app-coffeenav></app-coffeenav> -->
+        <!-- <app-coffeenav [menuList]="menuList" (filteredByCoffeeTypesChanged)="onFilteredByCoffeeTypesChanged($event)"
+            (filteredByPriceRangeChanged)="onFilteredByPriceRangeChanged($event)"
+            (filteredCoffeeChanged)="onFilteredCoffeeChanged($event)">
+        </app-coffeenav> -->
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="hot-card-container"> 
+            <mat-card class="hot-card" *ngFor="let coffee of filteredCoffee">
+            <!-- <mat-card class="hot-card" *ngFor="let coffee of appliedFilter ? filteredCoffee : menuList"> -->
+                <!-- <mat-card class="hot-card" *ngFor="let coffee of menuList"> -->
+                <div (click)="showDetails(coffee)">
+                    <mat-card-header>
+                        <img [src]="coffee.imageUrl">
+                    </mat-card-header>
+                    <mat-card-subtitle>{{ coffee.title }}</mat-card-subtitle>
+                    <mat-card-content>
+                        <p>{{ coffee.description }}</p>
+                        <p><b>Price: </b>{{ coffee.price }}</p>
+                    </mat-card-content>
+                </div>
+                <mat-card-actions>
+                    <button mat-button (click)="addToCart(coffee)">Add to Cart</button>
+                    <button mat-button (click)="buyNow(coffee)">Buy Now</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+
+        <mat-paginator class="custom-paginator" [length]="menuList.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="onPageChange($event)">
+        </mat-paginator>
+    </mat-drawer-content>
+</mat-drawer-container>

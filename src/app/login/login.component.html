@@ -1,0 +1,29 @@
+<form #loginForm="ngForm" class="login-form" (submit)="login(loginForm.value)">
+    <h1>LOGIN</h1>
+    <h4>for some grab</h4>
+    <div class="loginwrap">
+        <div class="usernamewrap">
+            <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput type="text" placeholder="Enter your username" ngModel name="username">
+                <!-- <mat-error *ngIf="loginForm.controls['username'].errors?.['required']">Username is required</mat-error> -->
+            </mat-form-field>
+        </div>
+        <div class="passwordwrap">
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Enter your password" ngModel name="password">
+                <!-- <mat-error *ngIf="loginForm.controls['password'].errors?.['required']">Password is required</mat-error> -->
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="warn" [disabled]="loginForm.invalid">Login</button>
+    </div>
+
+    <hr>
+
+    <div>
+        <p>Don't have an account ?
+            <button mat-raised-button color="warn" (click)="popSignUpDialog()">Sign Up</button>
+        </p>
+    </div>
+</form>

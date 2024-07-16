@@ -1,0 +1,63 @@
+<!-- If items array is empty, display a message with an image -->
+<div *ngIf="!(items$ | async) || (items$ | async)?.length === 0" class="empty-cart-message">
+  <img src="https://t3.ftcdn.net/jpg/05/18/51/58/240_F_518515822_BkpLpXZbFNpiAzWYYLl4RCGBHiTxfQbk.jpg" alt="Empty Cart">
+  <pre>
+   Your cart is empty :(
+
+Go & get your drink served!!
+  </pre>
+</div>
+
+<ng-container *ngIf="(items$ | async) as items" class="cart-container">
+  <!-- If items array is not empty, display the items -->
+  <table *ngIf="items.length > 0" class="cart-table">
+    <thead>
+      <tr>
+        <th>IMAGE</th>
+        <th>ITEM</th>
+        <th>PRICE</th>
+        <th>QUANTITY</th>
+        <th>Delete</th>
+        <th>COST</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; let i = index">
+        <td>
+          <img [src]="item.imageUrl" alt="{{ item.title }}">
+        </td>
+        <td>
+          <span>{{ item.title }}</span>
+        </td>
+        <td>{{ item.price }}</td>
+        <td>
+          <button mat-button (click)="decrementQuantity(item)">-</button>
+          <span>{{ item.quantity }}</span>
+          <button mat-button (click)="incrementQuantity(item)">+</button>
+        </td>
+        <td>
+          <button mat-button (click)="deleteItem(item.id)"><mat-icon>delete</mat-icon>
+          </button>
+        </td>
+        <td>₹ {{ cost[i] }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Display total -->
+  <div class="cart-total">
+    <h2>Total </h2>
+    <p>₹ {{ total }}</p>
+  </div>
+
+  <!-- Display cart counter -->
+  <div class="cart-counter" *ngIf="counter$ | async as counter">
+    <!-- <h2>Cart Counter</h2> -->
+    <span>Items in Cart: {{ counter }}</span>
+  </div>
+
+  <!-- Checkout button -->
+  <button class="cart-checkout" mat-button color="accent" (click)="checkout()">Checkout</button>
+
+
+</ng-container>

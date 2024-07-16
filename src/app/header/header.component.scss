@@ -1,0 +1,84 @@
+mat-toolbar {
+    overflow: hidden;
+    // position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: Sienna;
+    color: rgb(57, 33, 18);
+}
+
+.head {
+    flex: 1 1 auto;
+}
+
+a:hover {
+    background: #b99a9a;
+    color: rgb(30, 20, 11);
+}
+
+// .mat-badge {
+//     /* Adjust the position of the badge */
+//     position: absolute;
+//     // background-color: red !important;
+//     // color: white !important;
+//     padding: 2px 3px !important;
+//     font-size: 12px !important;
+//     border-radius: 50% !important;
+//     // top: -2px; 
+//     // right: -2px; 
+// }
+
+.cart {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    // margin: 5px;
+}
+
+.mat-badge {
+    position: absolute;
+    top: 3px;
+    // right: 5px;
+    transform: scale(0.8);
+}
+
+.logout {
+    padding-top: 6px;
+    padding-left: 22px;
+    // width: 40px !important;
+    height: 30px;
+    border-radius: 10%;
+    margin: 5px;
+    display: inline-block; /* Ensure it behaves like an inline element */
+    overflow: hidden;
+    background-color: rgb(215, 162, 81);
+
+    mat-icon {
+        color: #0a0404;
+    }
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+
+
+
+
+// 
+// /* Define the keyframes for the waving effect */
+// @keyframes wave {
+//     0% { transform: rotate(0deg); }
+//     10% { transform: rotate(20deg); }
+//     20% { transform: rotate(-20deg); }
+//     30% { transform: rotate(20deg); }
+//     40% { transform: rotate(-20deg); }
+//     50% { transform: rotate(0deg); }
+//     100% { transform: rotate(0deg); }
+// }
+// /* Apply the waving effect to the person icon */
+// .wave {
+//     animation: wave 2s ease-in-out infinite;
+// }

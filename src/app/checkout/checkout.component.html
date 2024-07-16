@@ -1,0 +1,235 @@
+<div class="checkout-container">
+
+    <!-- ADD to cart -->
+    <div *ngIf="cartData" class="items-to-pay">
+
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <!-- <th>Quantity</th> -->
+                    <!-- <th>Cost</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr *ngIf="cartData.items" class="carti-items">   -->
+                <!-- Display cart items -->
+                <!-- <th colspan="3"><h3>Cart Items:</h3></th> -->
+                <!-- </tr> -->
+                <tr *ngFor="let item of cartData.items" class="cart-item">
+                    <td> <img [src]="item.imageUrl"> </td>
+                    <td>{{ item.title }} ({{ item.quantity }})</td>
+                    <td>{{ item.price }}</td>
+                    <!-- <td> {{ item.quantity }}</td> -->
+                    <!-- <td> ₹{{ item.cost }}</td> -->
+                </tr>
+                <tr *ngIf="cartData.items" class="total">
+                    <td colspan="2">TOTAL</td>
+                    <td colspan="1">₹{{ cartData.total }}</td>
+                    <!-- <td colspan="3">
+                        <div>
+                            <h2>Total Cost: ₹{{ cartData.total }}</h2>
+                        </div>
+                    </td> -->
+                </tr>
+                <tr *ngIf="cartData.items">
+                    <td colspan="3">
+                        <button class="menu" mat-button color="accent" routerLink="/menu">Add More Items +</button>
+                    </td>
+                </tr>
+
+                <!-- <tr *ngIf="cartData.title" class="buy-now">
+                    <th colspan="3">
+                        <h3>Buy Now Items</h3>
+                    </th>
+                </tr> -->
+
+                <!-- buynow -->
+                <tr *ngIf="cartData.title" class="buy-now-item">
+                    <td><img [src]="cartData.imageUrl"></td>
+                    <!-- <td> <img [src]="cartData.imageUrl"> </td> -->
+                    <td> {{ cartData.title }}</td>
+                    <td> ₹{{ cartData.price }}</td>
+                    <!-- <td> ₹{{ cartData.total }}</td> -->
+                </tr>
+                <tr *ngIf="cartData.title" class="total">
+                    <!-- <td colspan="3"><b>TOTAL: </b> ₹{{ cartData.total }}</td> -->
+                    <td colspan="2">TOTAL</td>
+                    <td colspan="1">₹{{ cartData.total }}</td> <!-- Adjust colspan based on the number of columns -->
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- coupon -->
+    <hr>
+
+    <div class="coupons">
+        <h3>Offers & Benefits</h3>
+        <span class="coupon-name"><mark> #FIRSTORDER</mark></span>
+        <button class="apply-filter" (click)="applyCoupon()"> Apply Coupon</button><br><br>
+        <div><b>Total: </b> &#x20b9;{{ cartData.total }}</div>
+        <h4>After Applied Coupon</h4>
+        <p><b>To Pay : </b> &#x20b9; {{ offer }}</p>
+    </div>
+
+
+    <!-- shipping entry form -->
+    <div class="form-container">
+        <!-- <h1>Delivery Address</h1>
+        <form [formGroup]="shippingForm" (submit)="onShipping()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" formControlName="name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" formControlName="address" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" formControlName="city" required>
+            </div>
+            <div class="form-group">
+                <label for="zip">ZIP Code:</label>
+                <input type="text" id="zip" name="zip" formControlName="zip" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" formControlName="country" required>
+            </div>
+            <button type="submit" class="form-button">Confirm</button>
+        </form>
+         -->
+        <div class="ship-form">
+            <form #ShippingForm="ngForm" class="shipping-form" (submit)="onShipping(ShippingForm.value)">
+                <h1>Delivery Address</h1>
+                <div class="name">
+                    <mat-form-field class="form-field" appearance="outline">
+                        <input matInput type="text" ngModel name="name" placeholder="Enter your Name">
+                    </mat-form-field>
+                </div>
+                <div class="number">
+                    <mat-form-field class="form-field" appearance="outline">
+                        <input matInput type="text" ngModel name="phonenumber" placeholder="Enter your phone number">
+                    </mat-form-field>
+                </div>
+                <div class="address">
+                    <mat-form-field class="form-field" appearance="outline">
+                        <input matInput type="text" ngModel name="address" placeholder="Enter your Address">
+                    </mat-form-field>
+                </div>
+                <div class="pincode">
+                    <mat-form-field class="form-field" appearance="outline">
+                        <input matInput type="text" ngModel name="pincode" placeholder="Enter your Pincode">
+                    </mat-form-field>
+                </div>
+                <button mat-raised-button class="form-button">Confirm</button>
+            </form>
+        </div>
+
+        <hr>
+        <!-- Display form data -->
+        <div *ngIf="shippingForm" class="form-data">
+            <h4>Confirmed Address</h4>
+            <div class="form-field">
+                <p>Name: {{ shippingForm.name }}</p>
+            </div>
+            <div class="form-field">
+                <p>Phone Number: {{ shippingForm.phonenumber }}</p>
+            </div>
+            <div class="form-field">
+                <p>Address: {{ shippingForm.address }}</p>
+            </div>
+            <div class="form-field">
+                <p>Pincode: {{ shippingForm.pincode }}</p>
+            </div>
+        </div>
+        <!-- <div *ngIf="shippingForm" class="form-data">
+            <h4>Confirmed Address</h4>
+            <div class="form-field">
+                <p>Name: {{ shippingForm.get('name')?.value }}</p>
+            </div>
+            <div class="form-field">
+                <p>Phone Number: {{ shippingForm.get('phonenumber')?.value }}</p>
+            </div>
+            <div class="form-field">
+                <p>Address: {{ shippingForm.get('Address')?.value }}</p>
+            </div>
+            <div class="form-field">
+                <p>Pincode: {{ shippingForm.get('Pincode')?.value }}</p>
+            </div>
+        </div> -->
+        
+        
+    </div>
+
+
+    <!-- payment -->
+    <div class="payment">
+        <h3>Mode Of Payment</h3>
+    
+        <!-- Cash on Delivery (COD) -->
+        <div class="pay-cash">
+            <label>
+                <input type="radio" [(ngModel)]="selectedPaymentMethod" name="paymentMethod" value="cod">
+                Cash on Delivery
+            </label>
+        </div>
+    
+        <!-- Pay via Card -->
+        <div class="pay-card">
+            <label>
+                <input type="radio" [(ngModel)]="selectedPaymentMethod" name="paymentMethod" value="card">
+                Pay via Card
+            </label>
+        </div>
+    
+        <!-- Card details form -->
+        <mat-expansion-panel *ngIf="selectedPaymentMethod === 'card'">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Enter Card Details
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+    
+            <!-- Card details form fields -->
+            <form #cardForm="ngForm" (submit)="onPayment(cardForm.value)">
+                <mat-form-field>
+                    <mat-label>Cardholder Name</mat-label>
+                    <input matInput placeholder="Cardholder Name" ngModel name="cardHolderName" required>
+                </mat-form-field>
+    
+                <mat-form-field>
+                    <mat-label>Card Number</mat-label>
+                    <input matInput placeholder="Card Number" ngModel name="cardNumber" required>
+                </mat-form-field>
+    
+                <mat-form-field>
+                    <mat-label>Expiry Date</mat-label>
+                    <input matInput placeholder="MM / YYYY" ngModel name="expiryDate" required>
+                </mat-form-field>
+    
+                <mat-form-field>
+                    <mat-label>CVV</mat-label>
+                    <input matInput placeholder="CVV" ngModel name="cvv" required>
+                </mat-form-field>
+    
+                <button mat-raised-button color="primary" type="submit">Submit</button>
+            </form>
+        </mat-expansion-panel>
+    </div>
+    
+
+    <!-- Place Order button -->
+    <div class="place-order">
+        <button mat-raised-button color="primary" (click)="placeOrder()">Place Order</button>
+        <!-- <button mat-raised-button color="primary" (click)="openOrderHistoryDialog()">View Order History</button> -->
+    </div>
+
+
+</div>

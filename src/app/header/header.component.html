@@ -1,0 +1,35 @@
+<mat-toolbar class="mat-elevation-z8"> <!-- color="accent" -->
+
+    <span routerLink="homelogin"><mat-icon>coffee</mat-icon> CAFFINE!</span>
+    <span *ngIf="username$ | async as username">~<mat-icon>man</mat-icon> {{ username }}!</span>
+    
+    <!-- <span *ngIf="username$ | async as username">
+        <mat-select><mat-icon>man</mat-icon> {{ username }}! -->
+        <!-- <mat-select> -->
+            <!-- <mat-option [value]="null"> {{ username }}!</mat-option> -->
+            <!-- <mat-option value="details">Details</mat-option>
+            <mat-option value="orderHistory">Order History</mat-option>
+        </mat-select>
+    </span> -->
+
+
+    <div class="head"></div>
+    <a mat-button routerLink="homelogin">Home</a>
+    <a mat-button routerLink="menu">Menu</a>
+    <!-- <a mat-button routerLink="About Us">About Us</a> -->
+    <!-- <a mat-button routerLink="Contact">Contact</a> -->
+    <!-- <a mat-button>Feedback</a> -->
+    <button mat-icon-button class="cart" routerLink="cart">
+        <mat-icon>shopping_cart</mat-icon>
+        <span class="mat-badge" matBadge="{{ (counter$ | async) }}" matBadgeColor="warn" matTooltip="View Cart"></span>
+    </button>
+
+    <!-- <span class="cart-counter">{{ (counter$ | async) }}</span> -->
+
+    <!-- Logout button -->
+    <button mat-raised-button class="logout" (click)="logout()"
+        matTooltip="Logout"><mat-icon>exit_to_app</mat-icon></button>
+
+    <!-- <button mat-raised-button color="primary" (click)="popLoginDialog()">login</button> -->
+
+</mat-toolbar>

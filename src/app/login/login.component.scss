@@ -1,0 +1,39 @@
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #ebc893f0;
+}
+
+h1{
+    // font-style: oblique;
+    color: rgb(141, 75, 17);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h4{
+    color: rgb(24, 105, 78);
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.fullnamewrap,
+.passwordwrap {
+    margin-bottom: 5px;
+}
+
+hr {
+    height: 1px;
+    background-color: #0c0505;
+    margin: 20px 0;
+}
+
+/* Styling for the "Don't have an account?" text */
+p {
+    margin-bottom: 0;    
+}
+
+// .signup-button {
+//     margin-left: 5px;    /* Add some space between the text and the button */
+// }

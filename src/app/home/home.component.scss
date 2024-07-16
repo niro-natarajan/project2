@@ -1,0 +1,228 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.welcome,
+.line1,
+.line2,
+.visit,
+.login-button {
+    position: absolute;
+    // left: 50%; /* Center elements horizontally */
+    // transform: translateX(-20%); /* Adjust for centering */
+    color: white;
+    padding: 10px;
+    // text-align: center; /* Center text */
+    font-family: cursive;
+}
+
+.welcome {
+    top: 10%;
+    font-size: 5.5rem;
+    font-weight: bold;
+    left: 20%;
+    color: rgb(121, 79, 37);
+    font-family: cursive;
+}
+
+.line1 {
+    top: 26%;
+    font-size: 2rem;
+    left: 33%;
+    color: Tan;
+
+}
+
+.line2 {
+    top: 34%;
+    font-size: 1.5rem;
+    left: 42%;
+    color: rgb(133, 114, 90);
+
+}
+
+.visit {
+    top: 43%;
+    font-size: 1.2rem;
+    right: 28%;
+    color: rgb(192, 162, 128);
+}
+
+.login-button {
+    position: absolute;
+    right: 28.2%;
+    transform: translateX(-50%);
+    bottom: 45%;
+    background-color: #8B4513;
+    color: white;
+    border: rgb(248, 209, 36) groove 3px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    // box-sizing: border-box;
+}
+
+
+@media (max-width: 768px) {
+
+    .welcome,
+    .line1,
+    .line2,
+    .visit,
+    .login-button {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .welcome,
+    .line1,
+    .line2,
+    .visit,
+    .login-button {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+// .container {
+//     position: relative;
+//     text-align: center;
+// }
+
+// .top-right {
+//     position: absolute;
+//     top: 8px;
+//     right: 16px;
+//     padding-right: 60px;
+//     padding-top: 150px;
+//     color: rgb(121, 79, 37);
+//     font-size: 650%;
+//     font-family: cursive;
+// }
+
+// .bottom-right {
+//     position: absolute;
+//     bottom: 500px;
+//     right: 60px;
+//     color: Tan;
+//     font-size: 200%;
+//     font-family: cursive;
+// }
+
+// .last {
+//     position: absolute;
+//     bottom: 450px;
+//     right: 60px ;
+//     color: rgb(133, 114, 90);
+//     font-size: 200%;
+//     font-family: cursive;
+// }
+
+// .time{
+//     position: absolute;
+//     bottom: 330px;
+//     right: 230px ;
+//     color: rgb(192, 162, 128);
+//     font-size: 200%;
+//     font-family: cursive;
+// }
+
+// button{
+//     position: absolute;
+//     bottom: 380px;
+//     right: 300px;
+//     color: rgb(232, 227, 220);
+//     padding: 10px;
+//     cursor: pointer;
+//     background-color: #742308;
+//     border: #b3a6a0 solid;
+//     border-radius: 12px;
+// }
+
+
+// /* Responsive media query for screens 768px and below */
+// @media (max-width: 768px) {
+//     .top-right {
+//         font-size: 300%;
+//         top: 50px;
+//         right: 10px;
+//     }
+
+//     .bottom-right, .last, .time {
+//         bottom: 250px;
+//         right: 20px;
+//         font-size: 150%;
+//     }
+
+//     button {
+//         bottom: 200px;
+//         right: 50px;
+//         padding: 5px;
+//     }
+// }
+
+// /* Responsive media query for screens 480px and below */
+// @media (max-width: 480px) {
+//     .top-right {
+//         font-size: 250%;
+//         top: 20px;
+//         right: 5px;
+//     }
+
+//     .bottom-right, .last, .time {
+//         bottom: 150px;
+//         right: 10px;
+//         font-size: 120%;
+//     }
+
+//     button {
+//         bottom: 100px;
+//         right: 10px;
+//         padding: 5px;
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// div{
+//     height: 1000vh;
+// }
+
+// .container{
+//     width: 100%;
+//     background-position: center;
+//     background-size: cover;
+//     background-image: url("C:/Users/NiroshiniH/OneDrive - Korcomptenz Inc/Desktop/Assignmet/ECom/src/assets/images/cafe.jpg");
+//     background-attachment: fixed;
+//     color: white;
+//     opacity: 0.6;
+// }

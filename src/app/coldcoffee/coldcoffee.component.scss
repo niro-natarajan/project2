@@ -1,0 +1,23 @@
+.cold-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;    /* Distribute cards evenly across the container */
+    background-color: rgb(245, 229, 208);
+}
+
+.cold-card {
+    flex: calc(33.33% - 8px);    /* Two cards per row, 2(50), 3(33.33% - 8px), 4(25% - 8px) minus the margin between cards */
+    margin: 8px;    /* Adjust as needed for spacing between rows */
+    background-color: beige;
+}
+
+img {
+    width: 275px;
+    height: 183px;
+}
+
+mat-card-subtitle{
+    text-align: center;
+    color: rgb(108, 57, 3);
+    font-size: 1.5rem;
+}

@@ -1,0 +1,82 @@
+/* General styling */
+.container {
+    position: relative; /* Set the container to relative */
+    width: 100%; /* Full width */
+    height: auto; /* Height will depend on content */
+}
+
+img {
+    width: 100%; 
+    height: auto;
+    // overflow: hidden; 
+}
+
+.welcome, .line1, .line2, .visit, .login-button {
+    position: absolute;
+    // left: 50%; /* Center elements horizontally */
+    // transform: translateX(-20%); /* Adjust for centering */
+    color: white; /* White text for better visibility */
+    padding: 10px; /* Add padding for better readability */
+    // text-align: center; /* Center text */
+    font-family: cursive;
+}
+
+.welcome {
+    top: 10%; 
+    font-size: 5.5rem;
+    font-weight: bold;
+    left: 20%;
+    color: rgb(121, 79, 37);
+    font-family: cursive;
+}
+
+.line1 {
+    top: 26%;
+    font-size: 2rem;
+    left: 33%;
+    color: Tan;
+
+}
+
+.line2 {
+    top: 34%; /* Position at 50% from top */
+    font-size: 1.5rem;
+    left: 42%;
+    color: rgb(133, 114, 90);
+
+}
+
+.visit {
+    top: 43%; /* Position at 65% from top */
+    font-size: 1.2rem;
+    right: 28%;
+    color: rgb(192, 162, 128);
+}
+
+.login-button {
+        position: absolute; 
+        right: 26.4%;
+        transform: translateX(-50%); 
+        bottom: 45%; 
+        background-color: #8B4513; 
+        color: white; 
+        border: none; 
+        padding: 10px 20px; 
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    /* Reduce font size for smaller screens */
+    .welcome, .line1, .line2, .visit {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce font size for very small screens */
+    .welcome, .line1, .line2, .visit {
+        font-size: 1rem;
+    }
+}

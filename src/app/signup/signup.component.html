@@ -1,0 +1,43 @@
+<form #signUpForm="ngForm" class="signup-form" (submit)="signUpSubmit(signUpForm.value)">   <!--signUpForm.value-->
+
+    <h1>SIGN UP</h1>
+    <p>To Create Your Profile</p>
+
+    <div class="fullname">
+        <mat-form-field>
+            <input matInput type="text" ngModel name="fullname" placeholder="Enter your fullname">
+            <!-- [(ngModel)]="fullname" -->
+        </mat-form-field>
+    </div>
+
+    <div class="emailid">
+        <mat-form-field>
+            <input matInput type="text" ngModel name="emailid" placeholder="Enter your emailid">
+            <!--[(ngModel)]="emailid"-->
+        </mat-form-field>
+    </div>
+
+    <div class="number">
+        <mat-form-field>
+            <input matInput type="text" ngModel name="phonenumber" placeholder="Enter your phone number">
+            <!--[(ngModel)]="number"-->
+        </mat-form-field>
+    </div>
+
+    <div class="password">
+        <mat-form-field appearance="outline">
+            <input matInput type="password" ngModel name="password" placeholder="Set your password">
+            <!--[(ngModel)]="password"-->
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="warn">Submit</button>
+
+    <div class="login-redirect">
+        <p>Have an account ?
+            <button mat-raised-button color="warn" (click)="poplogDialog()">Login</button>
+        </p>
+    </div>
+
+
+</form>
